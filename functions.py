@@ -1,7 +1,7 @@
-def check_email(email):
 """ 
 Check if an email has a valid syntax or not
 """
+def check_email(email):
     try:
         # Find the position of the @
         at_pos = email.index('@')
