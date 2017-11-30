@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            color: black;
+            text-align: center;
+        }
+
+        input[type=text] {
+        width: 25%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        
+        }
+        form{
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check if an email is valid:</h1>
+    <form method="POST"><input type="text" name = "text" placeholder={{email}}></input> </form>
+    <p>{{result}}</p>
+</body>
+</html>
