@@ -3,7 +3,7 @@ This is the file that creates the database
 """
 
 from peewee import *
-import sqlite3
+from functions import *
 
 # Create the database
 db = SqliteDatabase('check_history.db')
@@ -30,11 +30,12 @@ def get_data():
     #init_database()
     data_list = []
     for email in Check_history.select():
-        data_list.append([Check_history.email, Check_history.valid_or_invalid])
+        print(email.valid_or_invalid)
+        data_list.append([email.email, email.valid_or_invalid])
     return data_list                    
 
 def init_database():
     db.connect()
     db.create_tables([Check_history], safe = True)
-    db.close()
+
 

@@ -11,7 +11,7 @@ def check_email(email):
         # Find the position of the .
         dot_pos = email.index('.')
     except ValueError:
-        return "{} is an invalid email!".format(email)
+        return ["invalid", "{} is an invalid email!".format(email)]
     else:
         # Get everything that's before the @
         before_at = email[at_pos-1::-1][::-1]
@@ -26,16 +26,18 @@ def check_email(email):
         email_without_dot_at = before_at + after_at + after_dot
 
         # Check if the remainders contain another . or @
-        if "." in email_without_dot_at or "@" in email_without_dot_at:
-            return "{} is an  invalid email!".format(email)
+        if("." in email_without_dot_at or 
+           "@" in email_without_dot_at or
+           " " in email_without_dot_at):
+            return ["invalid", "{} is an  invalid email!".format(email)]
         else:
-            return "{} is a valid email!".format(email)
+            return ["valid", "{} is a valid email!".format(email)]
 
 def create_table(data_list):
     code = ""
     for data in data_list:
         code += ("<tr>" + 
-                "<td>" + data[0] + "<td>" +
-                "<td>" + data[1] + "<td>" + 
-                "</tr>")
+                 "<td>" + data[0] + "</td>" + 
+                 "<td>" + data[1] + "</td>" +
+                 "</tr>")
     return code            
