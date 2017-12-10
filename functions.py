@@ -26,18 +26,20 @@ def check_email(email):
         email_without_dot_at = before_at + after_at + after_dot
 
         # Check if the remainders contain another . or @
-        if("." in email_without_dot_at or 
+        if("." in email_without_dot_at or
            "@" in email_without_dot_at or
            " " in email_without_dot_at):
             return ["invalid", "{} is an  invalid email!".format(email)]
         else:
             return ["valid", "{} is a valid email!".format(email)]
 
+
 def create_table(data_list):
+    """Add the data to HTML code"""
     code = ""
     for data in data_list:
-        code += ("<tr>" + 
-                 "<td>" + data[0] + "</td>" + 
+        code += ("<tr>" +
+                 "<td>" + data[0] + "</td>" +
                  "<td>" + data[1] + "</td>" +
                  "</tr>")
-    return code            
+    return code
